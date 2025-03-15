@@ -20,11 +20,11 @@ class Profesor(models.Model):
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=20)
-    profesor = models.ForeignKey(Profesor, on_delete=models.CASCADE)(max_length=100)
-    estudiantes = models.ManyToManyField(Estudiante)(max_length=100)
-    numero_curso = models.IntegerField()
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
+    profesor = models.CharField(max_length=100)
+    estudiantes = models.CharField(max_length=100)
+    numero_curso = models.IntegerField(max_length=100)
+    fecha_inicio = models.DateField(max_length=100)
+    fecha_fin = models.DateField(max_length=100)
 
     def __str__(self):
         return f"curso: {self.nombre} \n profesor: {self.profesor} \n comision: {self.numero_curso} \n fecha inicio: {self.fecha_inicio} \n fecha fin: {self.fecha_fin}"
